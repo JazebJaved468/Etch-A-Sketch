@@ -19,33 +19,44 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <div class="show-clear flex-row">
-        <!-- Taking grid size (no use now)-->
-        <!-- <input type="number" placeholder="grid-size">
-        <button id="show-grid">Apply</button> -->
+    <h1>Etch A Sketch</h1>
 
-        <!-- Clearing grid -->
-        <button id="clear">Clear</button>
-    </div>
+    <main class="main flex-row">
 
-    <!-- Making Grid -->
-    <div class="container"></div>
+        <div class="main-options flex-col">
+            <!-- change color -->
+            <div class="color-box">
+                <input type="color" id="set-color" value="#e6606">
+            </div>
+            <!-- <button id="color-btn">Set color</button>  no use now -->
 
-    <!-- change color -->
-    <input type="color" id="set-color" value="#e6606">
-    <!-- <button id="color-btn">Set color</button>  no use now -->
+            <!-- Random color -->
+            <button id="random-btn" class="options-btn">Random</button>
 
-    <!-- Eraser -->
-    <button id="eraser">Erase</button>
+            <!-- Eraser -->
+            <button id="eraser" class="options-btn">Erase</button>
 
-    <!-- Showing current Grid size -->
-    <h3 id="mention-grid-size">20 x 20</h3>
+            <!-- Rainbow -->
+            <button id="rainbow-btn" class="options-btn">Rainbow</button>
 
-    <!-- slider -->
-    <input type="range" name="slider" id="slider" min="1" max="100" value="20">
+            <!-- Showing current Grid size -->
+            <div class="grid-size">
+                <h3 >Pixels: <span id="mention-grid-size">20 x 20</span></h3>
 
-    <!-- Rainbow  -->
-    <button id="random-btn">Random</button>
+                <!-- slider -->
+                <input type="range" name="slider" id="slider" min="1" max="100" value="20">
+            </div>
+        </div>
+
+        <!-- Making Grid -->
+        <div class="container"></div>
+
+        
+    </main>
+
+    <!-- Clearing grid -->
+    <button id="clear">Clear</button>
+
 
 </body>
 </html>
