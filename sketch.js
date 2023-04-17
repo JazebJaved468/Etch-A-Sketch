@@ -96,7 +96,8 @@ function makeCanvas(num){
 function enableDrawing(){
     let divArray = document.querySelectorAll('.newDiv');
     divArray.forEach(div => {
-    div.addEventListener('click',drawCanvas);
+    div.addEventListener('mousedown',drawCanvas);
+    div.addEventListener('mouseup', stopDrawing);
     }
     );
 }
