@@ -19,6 +19,7 @@ let inputColor = document.querySelector('#set-color');
 let eraseBtn = document.querySelector('#eraser');
 let slider = document.querySelector('#slider');
 let randomBtn = document.querySelector('#random-btn');
+let rainbowBtn = document.querySelector('#rainbow-btn');
 
 // default values
 let num = 20; // grid default size
@@ -34,6 +35,14 @@ function randomColor(e){
     // console.log(`Hexadecimal color code: ${hexColorCode}`);
 
     // e.target.style.backgroundColor = `${setColor}`
+}
+
+function rainbowColor(){
+    let divArray = document.querySelectorAll('.newDiv');
+    divArray.forEach(div => {
+        div.addEventListener('mouseover',randomColor);
+    }
+    )
 }
 
 // Getting customized color from input
@@ -114,8 +123,6 @@ function drawCanvas(e){
     // To color the box which is clicked at first (in previous function call)
     e.target.style.backgroundColor = `${setColor}`
 
-    // trying to remove event listener
-    // addEventListener('click',sample);
 }   
 
 function changeColor(e){
@@ -130,11 +137,7 @@ function stopDrawing(){
     }
     )
 
-    // problem : you can't redraw on these divs again
-
     console.log("enable");
-    // drawCanvas();
-    // container.addEventListener('click',enableDrawing);
 }
 
 // clear button functionality : when clear btn is pressed, it will delete content of container and make a brand new canvus
@@ -159,6 +162,7 @@ clearBtn.addEventListener('click', clearCanvas);
 inputColor.addEventListener('input',getColor);
 eraseBtn.addEventListener('click', enableEraser);
 randomBtn.addEventListener('click', randomColor);
+rainbowBtn.addEventListener('click', rainbowColor);
 
 
 // let divArray = document.querySelectorAll('.newDiv');
