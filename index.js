@@ -95,25 +95,39 @@ function stopDrawing(){
     )
 }
 
-
-// getting random color in hexadecimal format
-function randomColor(e){
+// Calculating random color in hexadecimal format
+function anyColor(){
     const hexColorCode = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    setColor = hexColorCode;
+            setColor = hexColorCode;
 }
 
-// function rainbowColor(){
-//     let divArray = document.querySelectorAll('.newDiv');
-//     divArray.forEach(div => {
-//         div.addEventListener('mouseover',randomColor);
-//     }
-//     )
-// }
+// Setting random color
+function randomColor(){
+    let divArray = document.querySelectorAll('.newDiv');
+        divArray.forEach(div => {
+        div.removeEventListener('mouseover',anyColor)});
+    
+    anyColor();
+}
 
-// Getting customized color from input
-function getColor(){
-    console.log(inputColor.value);
-    setColor = `${inputColor.value}`;
+// Setting rainbow color 
+function rainbowColor(){
+    let divArray = document.querySelectorAll('.newDiv');
+        divArray.forEach(div => {
+        div.addEventListener('mouseover',anyColor)
+        })
+}
+
+// Getting and setting customized color from input
+function solidColor(){
+    setColor = inputColor.value;
+    let divArray = document.querySelectorAll('.newDiv');
+        divArray.forEach(div => {
+        div.removeEventListener('mouseover',anyColor)});
+
+    inputColor.addEventListener('input',()=>{
+        setColor = `${inputColor.value}`;
+    })
 }
 
 
@@ -128,6 +142,10 @@ function clearCanvas(e){
 
 // Eraser functionality
 function enableEraser(){
+    let divArray = document.querySelectorAll('.newDiv');
+        divArray.forEach(div => {
+        div.removeEventListener('mouseover',anyColor)});
+
     let eraser = "#ffffff"
     inputColor.value = eraser;
     setColor = eraser;
@@ -136,7 +154,7 @@ function enableEraser(){
 // Adding Events to the buttons
 slider.addEventListener('input', gridSize);
 clearBtn.addEventListener('click', clearCanvas);
-inputColor.addEventListener('input',getColor);
+inputColor.addEventListener('click', solidColor);
 eraseBtn.addEventListener('click', enableEraser);
 randomBtn.addEventListener('click', randomColor);
 rainbowBtn.addEventListener('click', rainbowColor);
