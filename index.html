@@ -25,50 +25,47 @@
 
     <!-- Title -->
     <title>Etch A Sketch</title>
-
 </head>
 
 <body>
-
+    <!-- Main heading -->
     <header>
-        <!-- Main heading -->
         <h1>Etch -A -Sketch</h1>
     </header>
+
     <main>
-            <!-- Showing current Grid size -->
-            <div class="grid-size">
-                <h3 >Pixels: <span id="mention-grid-size">20 x 20</span></h3>
+        <!-- Showing current Grid size -->
+        <div class="grid-size">
+            <h3 >Pixels: <span id="mention-grid-size">20 x 20</span></h3>
+            <!-- slider -->
+            <input type="range" name="slider" id="slider" min="1" max="50" value="20">
+        </div>
 
-                <!-- slider -->
-                <input type="range" name="slider" id="slider" min="1" max="50" value="20">
-            </div>
+        <!-- Making Grid -->
+        <div class="container"></div>
 
-            <!-- Making Grid -->
-            <div class="container"></div>
+        <!-- All Buttons -->
+        <div class="options">
+            <!-- Random color -->
+            <button id="random-btn" class="options-btn option-item"><img src="./icon/random.png" alt=""></button>
 
-            <div class="options">
-                <!-- Random color -->
-                <button id="random-btn" class="options-btn option-item"><img src="./icon/random.png" alt=""></button>
+            <!-- Rainbow -->
+            <button id="rainbow-btn" class="options-btn option-item"><img src="./icon/rainbow.png" alt=""></button>
 
-                <!-- Rainbow -->
-                <button id="rainbow-btn" class="options-btn option-item"><img src="./icon/rainbow.png" alt=""></button>
+            <!-- change color -->
+            <div id="set-color-div" class="option-item"><input type="color" id="set-color" value="#3dd9b2"></div>
 
-                <!-- change color -->
-                <div id="set-color-div" class="option-item"><input type="color" id="set-color" value="#3dd9b2"></div>
+            <!-- Eraser -->
+            <button id="eraser" class="options-btn option-item"><img src="./icon/eraser.png" alt=""></button>
 
-                <!-- Eraser -->
-                <button id="eraser" class="options-btn option-item"><img src="./icon/eraser.png" alt=""></button>
-
-                <!-- Clearing grid -->
-                <button id="clear" class="option-item" ><img src="./icon/delete.png" alt=""></button>
-            </div>
-
+            <!-- Clearing grid -->
+            <button id="clear" class="option-item" ><img src="./icon/delete.png" alt=""></button>
+        </div>
     </main>
 
     <!-- copyright Section -->
     <footer class="footer flex-row">
         <div> Copyright <span id="credit"> &copy </span> Project By Jazeb Javed, 2023</div>
     </footer>
-
 </body>
 </html>
