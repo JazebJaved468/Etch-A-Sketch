@@ -23,7 +23,7 @@ let rainbowBtn = document.querySelector('#rainbow-btn');
 
 // default values
 let num = 20; // grid default size
-let setColor = 'rgb(0, 0, 0)';  // default color
+let setColor = '#3dd9b2';  // default color
 makeCanvas(num); // default grid on load 
 
 
@@ -46,12 +46,12 @@ function makeCanvas(num){
     for(let i =0; i<num;i++){
         let w = 500/num;          // dividing container into parts depending on grid dimension
         let flexDiv = document.createElement('div');
-        flexDiv.style.cssText = `width:500px; height:${w}px`;
+        flexDiv.style.cssText = `width:500px; height:${w}px;`;
         flexDiv.classList.add('flex-row');
 
         for(let j= 0; j<num ; j++){
             let newDiv = document.createElement('div');
-            newDiv.style.cssText = `width:${w}px; height:${w}px`;
+            newDiv.style.cssText = `width:${w}px; height:${w}px;`;
             newDiv.classList.add('newDiv');
             flexDiv.appendChild(newDiv);
 

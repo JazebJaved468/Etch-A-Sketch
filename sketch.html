@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS and JS files -->
-    <link rel="stylesheet" href="sketch.css">
+    <link rel="stylesheet" href="./sketch.css">
     <script src="./sketch.js" defer></script>
 
     <!-- Icon -->
@@ -15,48 +15,60 @@
     <!-- Icon Credit -->
     <!-- <a target="_blank" href="https://icons8.com/icon/rIvlS8Bq2hEE/sketch">Sketch</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
 
+    <!-- Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bruno+Ace+SC&family=Cookie&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Title -->
     <title>Etch A Sketch</title>
+
 </head>
+
 <body>
-    <h1>Etch A Sketch</h1>
 
-    <main class="main flex-row">
-
-        <div class="main-options flex-col">
-            <!-- change color -->
-            <div class="color-box">
-                <input type="color" id="set-color" value="#e6606">
-            </div>
-            <!-- <button id="color-btn">Set color</button>  no use now -->
-
-            <!-- Random color -->
-            <button id="random-btn" class="options-btn">Random</button>
-
-            <!-- Eraser -->
-            <button id="eraser" class="options-btn">Erase</button>
-
-            <!-- Rainbow -->
-            <button id="rainbow-btn" class="options-btn">Rainbow</button>
-
+    <header>
+        <!-- Main heading -->
+        <h1>Etch -A -Sketch</h1>
+    </header>
+    <main>
             <!-- Showing current Grid size -->
             <div class="grid-size">
                 <h3 >Pixels: <span id="mention-grid-size">20 x 20</span></h3>
 
                 <!-- slider -->
-                <input type="range" name="slider" id="slider" min="1" max="100" value="20">
+                <input type="range" name="slider" id="slider" min="1" max="50" value="20">
             </div>
-        </div>
 
-        <!-- Making Grid -->
-        <div class="container"></div>
+            <!-- Making Grid -->
+            <div class="container"></div>
 
-        
+            <div class="options">
+                <!-- Random color -->
+                <button id="random-btn" class="options-btn option-item"><img src="./icon/random.png" alt=""></button>
+
+                <!-- Rainbow -->
+                <button id="rainbow-btn" class="options-btn option-item"><img src="./icon/rainbow.png" alt=""></button>
+
+                <!-- change color -->
+                <div id="set-color-div" class="option-item"><input type="color" id="set-color" value="#3dd9b2"></div>
+
+                <!-- Eraser -->
+                <button id="eraser" class="options-btn option-item"><img src="./icon/eraser.png" alt=""></button>
+
+                <!-- Clearing grid -->
+                <button id="clear" class="option-item" ><img src="./icon/delete.png" alt=""></button>
+            </div>
+
     </main>
 
-    <!-- Clearing grid -->
-    <button id="clear">Clear</button>
-
+    <!-- copyright Section -->
+    <footer class="footer flex-row">
+        <div> Copyright <span id="credit"> &copy </span> Project By Jazeb Javed, 2023</div>
+    </footer>
 
 </body>
 </html>
