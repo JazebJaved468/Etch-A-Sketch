@@ -25,6 +25,7 @@ let rainbowBtn = document.querySelector('#rainbow-btn');
 // default values
 let num = 20; // grid default size
 let setColor = '#3dd9b2';  // default color
+inputColorDiv.classList.add('active'); // Middle button active by default
 makeCanvas(num); // default grid on load 
 
 
