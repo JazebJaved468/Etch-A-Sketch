@@ -127,6 +127,8 @@ function randomColor(){
     activate(randomBtn);
     removeEvent();
     anyColor();
+    inputColor.value = setColor
+
 }
 
 // Setting rainbow color 
