@@ -50,6 +50,7 @@ main{
     align-items: center;
     gap: 10px;
     /* border: 2px solid green; */
+    user-select: none;
 }
 
 /* Slider Starts */
