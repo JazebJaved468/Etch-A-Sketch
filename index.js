@@ -103,9 +103,7 @@ function anyColor(){
 
 // Setting random color
 function randomColor(){
-    let divArray = document.querySelectorAll('.newDiv');
-        divArray.forEach(div => {
-        div.removeEventListener('mouseover',anyColor)});
+    removeEvent();
     
     anyColor();
 }
@@ -121,13 +119,17 @@ function rainbowColor(){
 // Getting and setting customized color from input
 function solidColor(){
     setColor = inputColor.value;
-    let divArray = document.querySelectorAll('.newDiv');
-        divArray.forEach(div => {
-        div.removeEventListener('mouseover',anyColor)});
-
+    removeEvent();
     inputColor.addEventListener('input',()=>{
         setColor = `${inputColor.value}`;
     })
+}
+
+// Removing that mouse over event which was implemented first time in rainbowColor function , it is necessary to remove it for the proper functionality of the other functions
+function removeEvent(){
+    let divArray = document.querySelectorAll('.newDiv');
+    divArray.forEach(div => {
+    div.removeEventListener('mouseover',anyColor)});
 }
 
 
@@ -142,10 +144,7 @@ function clearCanvas(e){
 
 // Eraser functionality
 function enableEraser(){
-    let divArray = document.querySelectorAll('.newDiv');
-        divArray.forEach(div => {
-        div.removeEventListener('mouseover',anyColor)});
-
+    removeEvent();
     let eraser = "#ffffff"
     inputColor.value = eraser;
     setColor = eraser;
