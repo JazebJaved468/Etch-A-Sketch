@@ -12,7 +12,7 @@ Etch-a-sketch is a drawing application built for children to play around its too
 1) "Solid" color (the middle button), you can click on it to chooose color of your own choice or use a deafult color
 2) "Random" color (the extreme right button), you click on it to get a random color, again click on it to get another random color.
 3) "Rainbow" color (after random button), you click on it to enable rainbow mode means as you drag over the canvas, you will get different color on every pixel. Amazingg!!
-4) "Eraser", this will help you to erase a specific thing on your canvas. Yeah we know you can't undo your life and rewrite it but here we have given the feature to correct your mistakes :) .
+4) "Eraser" button, this will help you to erase a specific thing on your canvas. Yeah we know you can't undo your life and rewrite it but here we have given the feature to correct your mistakes :) .
 5) "Delete All" button ⚠️, this will clear your whole canvas and there is no option to go back.
 
 # Note: 
