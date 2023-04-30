@@ -109,6 +109,7 @@ function removeEvent(){
     div.removeEventListener('mouseover',anyColor)});
 }
 
+// Functionality to show the button is currently active on user interface.
 function activate(button){
     let btnArray = [randomBtn, rainbowBtn, inputColorDiv, eraseBtn];
     btnArray.map(btn => {
