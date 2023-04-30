@@ -15,6 +15,7 @@ let container = document.querySelector('.container');
 let clearBtn = document.querySelector('#clear');
 let showGridSize = document.querySelector('#mention-grid-size');
 let inputColor = document.querySelector('#set-color');
+let inputColorDiv = document.querySelector('#set-color-div');
 // let colorBtn = document.querySelector('#color-btn');
 let eraseBtn = document.querySelector('#eraser');
 let slider = document.querySelector('#slider');
@@ -103,13 +104,21 @@ function anyColor(){
 
 // Setting random color
 function randomColor(){
+    randomBtn.classList.add('active')
+    rainbowBtn.classList.remove('active')
+    eraseBtn.classList.remove('active')
+    inputColorDiv.classList.remove('active')
     removeEvent();
-    
     anyColor();
 }
 
 // Setting rainbow color 
 function rainbowColor(){
+    rainbowBtn.classList.add('active')
+    randomBtn.classList.remove('active')
+    eraseBtn.classList.remove('active')
+    inputColorDiv.classList.remove('active')
+
     let divArray = document.querySelectorAll('.newDiv');
         divArray.forEach(div => {
         div.addEventListener('mouseover',anyColor)
@@ -118,6 +127,11 @@ function rainbowColor(){
 
 // Getting and setting customized color from input
 function solidColor(){
+    inputColorDiv.classList.add('active')
+    rainbowBtn.classList.remove('active')
+    randomBtn.classList.remove('active')
+    eraseBtn.classList.remove('active')
+
     setColor = inputColor.value;
     removeEvent();
     inputColor.addEventListener('input',()=>{
@@ -135,15 +149,26 @@ function removeEvent(){
 
 // clear button functionality : when clear btn is pressed, it will delete content of container and make a brand new canvus
 function clearCanvas(e){
+    randomBtn.classList.remove('active')
+    rainbowBtn.classList.remove('active')
+    eraseBtn.classList.remove('active')
+    inputColorDiv.classList.add('active')
+
     // emptying container
     container.textContent = '';
     // making brand new canvas
     makeCanvas(num);
+    inputColor.value = "#3dd9b2"
+    setColor = "#3dd9b2"
 }
 
 
 // Eraser functionality
 function enableEraser(){
+    eraseBtn.classList.add('active')
+    randomBtn.classList.remove('active')
+    rainbowBtn.classList.remove('active')
+    inputColorDiv.classList.remove('active')
     removeEvent();
     let eraser = "#ffffff"
     inputColor.value = eraser;
@@ -153,7 +178,7 @@ function enableEraser(){
 // Adding Events to the buttons
 slider.addEventListener('input', gridSize);
 clearBtn.addEventListener('click', clearCanvas);
-inputColor.addEventListener('click', solidColor);
+inputColorDiv.addEventListener('click', solidColor);
 eraseBtn.addEventListener('click', enableEraser);
 randomBtn.addEventListener('click', randomColor);
 rainbowBtn.addEventListener('click', rainbowColor);
