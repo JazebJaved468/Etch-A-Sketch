@@ -16,13 +16,13 @@ Etch-a-sketch is a drawing application built for children to play around its too
 5) "Delete All" button ⚠️, this will clear your whole canvas and there is no option to go back.
 
 # Note: 
-This is a purely desktop based web application becuse of the drawing feature, it can't be done on mobile right now.
+This is a purely desktop based web application becuse of the drawing feature, the drawing feature will not work on mobile right now.
 
 # Out Of Scope
 Till now, you can't save and download your drawings on your local storage or anywhere else. So, if you have drawn something interesting and beautiful, you can take screenshot using "Snipping Tool" to save your art on your local storage.
 
 # Incomplete components:
-* Rainbow button
+* Rainbow button (Done ✅)
 * responsiveness
 
 # Thanks
