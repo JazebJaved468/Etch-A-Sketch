@@ -102,22 +102,35 @@ function anyColor(){
             setColor = hexColorCode;
 }
 
+// Removing that mouse over event which was implemented first time in rainbowColor function , it is necessary to remove it for the proper functionality of the other functions
+function removeEvent(){
+    let divArray = document.querySelectorAll('.newDiv');
+    divArray.forEach(div => {
+    div.removeEventListener('mouseover',anyColor)});
+}
+
+function activate(button){
+    let btnArray = [randomBtn, rainbowBtn, inputColorDiv, eraseBtn];
+    btnArray.map(btn => {
+        if(button === btn){
+            button.classList.add('active');
+        }
+        else{
+            btn.classList.remove('active');
+        } 
+    })
+}
+
 // Setting random color
 function randomColor(){
-    randomBtn.classList.add('active')
-    rainbowBtn.classList.remove('active')
-    eraseBtn.classList.remove('active')
-    inputColorDiv.classList.remove('active')
+    activate(randomBtn);
     removeEvent();
     anyColor();
 }
 
 // Setting rainbow color 
 function rainbowColor(){
-    rainbowBtn.classList.add('active')
-    randomBtn.classList.remove('active')
-    eraseBtn.classList.remove('active')
-    inputColorDiv.classList.remove('active')
+    activate(rainbowBtn);
 
     let divArray = document.querySelectorAll('.newDiv');
         divArray.forEach(div => {
@@ -127,10 +140,7 @@ function rainbowColor(){
 
 // Getting and setting customized color from input
 function solidColor(){
-    inputColorDiv.classList.add('active')
-    rainbowBtn.classList.remove('active')
-    randomBtn.classList.remove('active')
-    eraseBtn.classList.remove('active')
+    activate(inputColorDiv);
 
     setColor = inputColor.value;
     removeEvent();
@@ -139,16 +149,19 @@ function solidColor(){
     })
 }
 
-// Removing that mouse over event which was implemented first time in rainbowColor function , it is necessary to remove it for the proper functionality of the other functions
-function removeEvent(){
-    let divArray = document.querySelectorAll('.newDiv');
-    divArray.forEach(div => {
-    div.removeEventListener('mouseover',anyColor)});
-}
+// Eraser functionality
+function enableEraser(){
+    activate(eraseBtn);
 
+    removeEvent();
+    let eraser = "#ffffff"
+    inputColor.value = eraser;
+    setColor = eraser;
+}
 
 // clear button functionality : when clear btn is pressed, it will delete content of container and make a brand new canvus
 function clearCanvas(e){
+
     randomBtn.classList.remove('active')
     rainbowBtn.classList.remove('active')
     eraseBtn.classList.remove('active')
@@ -162,18 +175,6 @@ function clearCanvas(e){
     setColor = "#3dd9b2"
 }
 
-
-// Eraser functionality
-function enableEraser(){
-    eraseBtn.classList.add('active')
-    randomBtn.classList.remove('active')
-    rainbowBtn.classList.remove('active')
-    inputColorDiv.classList.remove('active')
-    removeEvent();
-    let eraser = "#ffffff"
-    inputColor.value = eraser;
-    setColor = eraser;
-}
 
 // Adding Events to the buttons
 slider.addEventListener('input', gridSize);
