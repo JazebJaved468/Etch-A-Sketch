@@ -100,7 +100,13 @@ function stopDrawing(){
 // Calculating random color in hexadecimal format
 function anyColor(){
     const hexColorCode = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            setColor = hexColorCode;
+    if(hexColorCode.length < 7){
+        console.log("less than 7")
+        setColor = "#ff4dff"
+    }
+    else{
+    setColor = hexColorCode;
+    }
 }
 
 // Removing that mouse over event which was implemented first time in rainbowColor function , it is necessary to remove it for the proper functionality of the other functions
