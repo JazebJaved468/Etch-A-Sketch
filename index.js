@@ -171,17 +171,29 @@ function enableEraser(){
 // clear button functionality : when clear btn is pressed, it will delete content of container and make a brand new canvus
 function clearCanvas(e){
 
+    // randomBtn.classList.remove('active')
+    // rainbowBtn.classList.remove('active')
+    // eraseBtn.classList.remove('active')
+    // inputColorDiv.classList.add('active')
+
+    // Taking confirmation to clear the canvas
+    eraseConfirm = prompt("Are you sure you want to delete your art?? It will clear your whole canvas. (y/n)");
+    if(eraseConfirm === 'Y' || eraseConfirm === 'y'){
     randomBtn.classList.remove('active')
     rainbowBtn.classList.remove('active')
     eraseBtn.classList.remove('active')
     inputColorDiv.classList.add('active')
-
+    
     // emptying container
     container.textContent = '';
     // making brand new canvas
     makeCanvas(num);
     inputColor.value = "#3dd9b2"
     setColor = "#3dd9b2"
+    }
+    else{
+        return;
+    }
 }
 
 
