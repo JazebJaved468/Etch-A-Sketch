@@ -21,6 +21,7 @@ let eraseBtn = document.querySelector('#eraser');
 let slider = document.querySelector('#slider');
 let randomBtn = document.querySelector('#random-btn');
 let rainbowBtn = document.querySelector('#rainbow-btn');
+let saveButton =  document.querySelector('#save-button');
 
 // default values
 let num = 20; // grid default size
@@ -197,6 +198,24 @@ function clearCanvas(e){
 }
 
 
+// Taking Screenshot for saving the drawing and then downloading
+function takeScreenshot() {
+    // Get the target window element
+    const windowElement = document.getElementById('target-window');
+
+    // Use html2canvas to capture the screenshot
+    html2canvas(windowElement).then(function (canvas) {
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'screenshot.png';
+
+    // Programmatically click the link to trigger the download
+    link.click();
+});
+}
+
+
 // Adding Events to the buttons
 slider.addEventListener('input', gridSize);
 clearBtn.addEventListener('click', clearCanvas);
@@ -204,4 +223,5 @@ inputColorDiv.addEventListener('click', solidColor);
 eraseBtn.addEventListener('click', enableEraser);
 randomBtn.addEventListener('click', randomColor);
 rainbowBtn.addEventListener('click', rainbowColor);
+saveButton.addEventListener('click', takeScreenshot);
 
